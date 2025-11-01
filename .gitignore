@@ -1,0 +1,83 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### IntelliJ IDEA ###
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
+*.iws
+*.iml
+*.ipr
+
+
+# Ignore test reports and screenshots
+/test-output/
+screenshots/
+allure-results/
+reports/
+ExtentReport/
+*.html
+
+# Ignore generated Selenium WebDriver files
+chromedriver.log
+geckodriver.log
+selenium-server.log
+
+# Ignore compiled and temporary files
+/bin/
+*.swp
+*.DS_Store
+Thumbs.db
+
+# Ignore Maven-specific files
+.mvn/
+mvnw
+mvnw.cmd
+
+# Ignore log and output files
+*.log
+/logs/
+*.out
+*.err
+
+# Ignore build and dependency files
+/target/
+*.class
+*.jar
+*.war
+*.ear
+
+# Ignore dependency caching
+/.m2/
+
+# Ignore Node modules (if using any JS tools)
+node_modules/
+
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SeleniumHRMSuite" parallel="classes" thread-count="5">
+    <listeners>
+        <listener class-name="org.selenium.java.listeners.TestListener"></listener>
+    </listeners>
+    <test name="SeleniumHRMTest">
+        <classes>
+            <class name="org.selenium.java.test.DummyClass" />
+            <class name="org.selenium.java.test.DummyClass2" />
+            <class name="org.selenium.java.test.LoginPageTest" />
+            <class name="org.selenium.java.test.HomePageTest" />
+        </classes>
+    </test>
+</suite>
