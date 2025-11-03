@@ -91,6 +91,7 @@ public class BaseClass {
         String browser = prop.getProperty("browser");
 
         if (browser.equalsIgnoreCase("chrome")) {
+            //Jenkins -> comment this line for jenkins port 8080 as it is dir running with war file and DriverManager will not be able to download driver binary and set path automatically in windows 32 rather 64 bit system
             System.setProperty("webdriver.chrome.driver", "C:\\Users\\CK\\Downloads\\Learning\\Sel\\Drivers\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
             //driver = new ChromeDriver();
             //using WebDriverManager to manage driver binaries
