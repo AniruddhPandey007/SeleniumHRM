@@ -91,7 +91,7 @@ public class BaseClass {
         String browser = prop.getProperty("browser");
 
         if (browser.equalsIgnoreCase("chrome")) {
-           // System.setProperty("webdriver.chrome.driver", "C:\\Users\\CK\\Downloads\\Learning\\Sel\\Drivers\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "C:\\Users\\CK\\Downloads\\Learning\\Sel\\Drivers\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
             //driver = new ChromeDriver();
             //using WebDriverManager to manage driver binaries
             // WebDriverManager.chromedriver().setup();
