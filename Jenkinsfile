@@ -24,7 +24,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/hverma22/Selenium-Test-Framework.git'
+                git branch: 'main', url: 'https://github.com/AniruddhPandey007/SeleniumHRM.git'
             }
         }
 
@@ -52,9 +52,9 @@ pipeline {
         stage('Reports') {
             steps {
                 publishHTML(target: [
-                    reportDir: 'src/test/resources/ExtentReport',  
-                    reportFiles: 'SparkReport.html',  
-                    reportName: 'Extent Report'
+                    reportDir: 'src/test/resources/ExtentReport',
+                    reportFiles: 'ExtentReport.html',
+                    reportName: 'Extent Spark Report'
                 ])
             }
         }
@@ -68,7 +68,7 @@ pipeline {
 
         success {
             emailext (
-                to: 'hitendraverma22@gmail.com',
+                to: 'namp4020@gmail.com',
                 subject: "Build Success: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: """
                 <html>
@@ -79,9 +79,9 @@ pipeline {
                 <p><b>Build Number:</b> #${env.BUILD_NUMBER}</p>
                 <p><b>Build Status:</b> <span style="color: green;"><b>SUCCESS</b></span></p>
                 <p><b>Build URL:</b> <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>
-                <p><b>Extent Report:</b> <a href="http://localhost:8080/job/${env.JOB_NAME}/HTML_20Extent_20Report/">Click here</a></p>
+                <p><b>Extent Report:</b> <a href="http://localhost:9090/job/Orange_HRM_Project/EXTENT_5fHTML_5fREPORT/">Click here</a></p>
                 <p>Best regards,</p>
-                <p><b>Automation Team</b></p>
+                <p><b>Aniruddh</b></p>
                 </body>
                 </html>
                 """,
@@ -92,7 +92,7 @@ pipeline {
 
         failure {
             emailext (
-                to: 'hitendraverma22@gmail.com',
+                to: 'namp4020@gmail.com',
                 subject: "Build Failed: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: """
                 <html>
@@ -104,9 +104,9 @@ pipeline {
                 <p><b>Build Status:</b> <span style="color: red;"><b>FAILED &#10060;</b></span></p>
                 <p><b>Build URL:</b> <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>
                 <p><b>Please check the logs and take necessary actions.</b></p>
-                <p><b>Extent Report (if available):</b> <a href="http://localhost:8080/job/${env.JOB_NAME}/HTML_20Extent_20Report/">Click here</a></p>
+                <p><b>Extent Report (if available):</b> <a href="http://localhost:9090/job/Orange_HRM_Project/EXTENT_5fHTML_5fREPORT/">Click here</a></p>
                 <p>Best regards,</p>
-                <p><b>Automation Team</b></p>
+                <p><b>Aniruddh</b></p>
                 </body>
                 </html>
                 """,

@@ -11,7 +11,9 @@ public class HomePage {
 
     // Define locators using By class
     private By adminTab = By.xpath("//span[text()='Admin']");
-    private By userIDButton = By.className("oxd-userdropdown-name");
+//    private By adminTab = By.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/aside[1]/nav[1]/div[2]/ul[1]/li[1]/a[1]/span[1]");
+    //private By adminTab = By.xpath("//a[@href='/web/index.php/admin/viewAdminModule']//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name']");
+    private By userIDButton = By.cssSelector(".oxd-userdropdown-name");
     private By logoutButton = By.xpath("//a[text()='Logout']");
     private By orangeHRMLogo = By.xpath("//div[@class='oxd-brand-banner']//img");
 

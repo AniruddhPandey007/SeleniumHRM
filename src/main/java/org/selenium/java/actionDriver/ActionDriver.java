@@ -48,6 +48,7 @@ public class ActionDriver {
         public void enterText(By by, String value)
         {
             try {
+
                 applyBorder(by, "green");
                 waitForElementToBeVisible(by);
                 WebElement element = driver.findElement(by);
@@ -112,16 +113,35 @@ public class ActionDriver {
 
 
     //Method to check if Element is Displayed
-    public boolean isDisplayed(By by) {
+   /* public boolean isDisplayed(By by) {
         try {
+            //applyBorder(by, "green");  // if used here -> Expected condition failed: waiting for visibility of element located by By.xpath: //span[text()='Admin'] (tried for 30 second(s)
+
             applyBorder(by, "green");
-            waitForElementToBeVisible(by);
+            waitForElementToBeVisible(by);// To avoid above error using here
             logger.info("Element is displayed ");
             return driver.findElement(by).isDisplayed();
         } catch (Exception e) {
             applyBorder(by, "red");
             //System.out.println("Unable to Display Element" + e.getMessage());
             logger.error("Unable to Display Element" + e.getMessage());
+            return false;
+        }
+    }*/
+
+    public boolean isDisplayed(By by) {
+        try {
+            Thread.sleep(5);
+            waitForElementToBeVisible(by);
+            applyBorder(by,"green");
+            logger.info("Element is displayed " + getElementDescription(by));
+            ExtentManager.logStep("Element is displayed: "+getElementDescription(by));
+            ExtentManager.logStepWithScreenshot(BaseClass.getDriver(), "Element is displayed: ", "Element is displayed: "+getElementDescription(by));
+            return driver.findElement(by).isDisplayed();
+        } catch (Exception e) {
+            applyBorder(by,"red");
+            logger.error("Element is not displayed: " + e.getMessage());
+            ExtentManager.logFailure(BaseClass.getDriver(),"Element is not displayed: ","Elemenet is not displayed: "+getElementDescription(by));
             return false;
         }
     }
@@ -187,6 +207,21 @@ public class ActionDriver {
 
           }
       }
+
+   /* //Utility Method to Border an element
+    public void applyBorder(By by,String color) {
+        try {
+            //Locate the element
+            WebElement element = driver.findElement(by);
+            //Apply the border
+            String script = "arguments[0].style.border='3px solid "+color+"'";
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript(script, element);
+            logger.info("Applied the border with color "+color+ " to element: "+getElementDescription(by));
+        } catch (Exception e) {
+            logger.warn("Failed to apply the border to an element: "+getElementDescription(by),e);
+        }
+    }*/
 
     //Utility Method to Border an element
     public void applyBorder(By by,String color) {
