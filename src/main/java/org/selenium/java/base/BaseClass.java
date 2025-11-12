@@ -202,15 +202,18 @@ public class BaseClass {
                     options.addArguments("-headless");
                     //options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1080");
                     driver.set(new RemoteWebDriver(new URL(gridURL), options));
+                    logger.info("ChromeDriver Instance is created.");
                 } else if (browser.equalsIgnoreCase("firefox")) {
                     FirefoxOptions options = new FirefoxOptions();
                     options.addArguments("-headless");
                     driver.set(new RemoteWebDriver(new URL(gridURL), options));
+                    logger.info("firefox Driver Instance is created.");
                 } else if (browser.equalsIgnoreCase("edge")) {
                     EdgeOptions options = new EdgeOptions();
                     options.addArguments("-headless");
                     //options.addArguments("--headless=new", "--disable-gpu","--no-sandbox","--disable-dev-shm-usage");
                     driver.set(new RemoteWebDriver(new URL(gridURL), options));
+                    logger.info("edge Driver Instance is created.");
                 } else {
                     throw new IllegalArgumentException("Browser Not Supported: " + browser);
                 }
