@@ -23,14 +23,14 @@
         </classes>
     </test>
 
-    <test name="SeleniumHRMTest_chrome">
+    <test name="SeleniumHRMTest_firefox">
         <parameter name="browser" value="firefox" />
         <classes>
             <class name="org.selenium.java.test.DummyClass2" />
         </classes>
     </test>
 
-    <test name="SeleniumHRMTest_chrome">
+    <test name="SeleniumHRMTest_edge">
         <parameter name="browser" value="edge" />
         <classes>
             <!--<class name="org.selenium.java.test.LoginPageTest" />
